@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use app\enums\Department;
 return new class extends Migration
 {
     /**
@@ -13,7 +12,7 @@ return new class extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->string('name','100');
+            $table->string('name','100')->unique();
             $table->text('description');
             $table->string('department')->nullable();
             $table->decimal('price', 5, 2);

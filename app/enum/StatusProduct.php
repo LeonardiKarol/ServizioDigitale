@@ -1,8 +1,8 @@
 <?php
 
-namespace App\enums;
+namespace App\Enum;
 
-enum StatusTable: string
+enum StatusProduct: string
 {
     case Not_Ready = 'NotReady';
     case Ready = 'Ready';
