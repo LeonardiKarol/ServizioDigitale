@@ -2,17 +2,17 @@
 
 namespace App\enums;
 
-enum Departments: string
+enum Department: string
 {
     case Cafeteria = 'cafeteria';
-    case LoungeBar = 'LoungeBar';
+    case Lounge_Bar = 'LoungeBar';
     case Bakery = 'bakery';
 
     public function label(): string
     {
         return match ($this) {
             self::Cafeteria => 'Caffetteria',
-            self::LoungeBar => 'Lounge Bar',
+            self::Lounge_Bar => 'Lounge Bar',
             self::Bakery => 'Pasticceria',
         };
     }    

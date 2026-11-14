@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('waiter_id')->constrained()->restrictOnDelete();
-            $table->string('status');
-            $table->string('table_number')->default(StatusTable::ToPay->value);
+            $table->foreignId('waiter_id')->constrained('users')->restrictOnDelete();
+            $table->string('status')->default(StatusTable::To_Pay->value);
+            $table->string('table_number');
             $table->timestamps();
         });
     }

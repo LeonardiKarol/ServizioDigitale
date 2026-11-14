@@ -8,6 +8,7 @@ enum Role: string
     case Cashier = 'cashier';
     case Waiter = 'waiter';
     case Barman = 'barman';
+    case Coffee_maker = 'coffee maker';
 
     public function label(): string
     {
@@ -16,6 +17,7 @@ enum Role: string
             self::Cashier => 'Cassiera',
             self::Waiter => 'Cameriere',
             self::Barman => 'Barman',
+            self::Coffee_maker => 'Barista',
         };
     }
 }
