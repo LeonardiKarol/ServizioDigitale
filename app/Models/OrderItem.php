@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use App\Models\Order;
 use App\Models\Product;
-use App\Enum\StatusProduct;
+use App\Enums\StatusProduct;
+
 #[Fillable(['order_id', 'product_id','quantity', 'unit_price','status_product'])]
 
 class OrderItem extends Model

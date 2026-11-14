@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use App\Models\User;
 use App\Models\OrderItem;
-use App\Enum\StatusTable;
+use App\Enums\StatusTable;
 
 #[Fillable(['waiter_id','status', 'table_number'])]
 
