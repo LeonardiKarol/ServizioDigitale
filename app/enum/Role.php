@@ -1,8 +1,21 @@
 <?php
 
-namespace App;
+namespace App\enums;
 
-enum Role
+enum Role: string
 {
-    //
+    case Owner = 'owner';
+    case Cashier = 'cashier';
+    case Waiter = 'waiter';
+    case Barman = 'barman';
+
+    public function label(): string
+    {
+        return match ($this) {
+            self::Owner => 'Titolare',
+            self::Cashier => 'Cassiera',
+            self::Waiter => 'Cameriere',
+            self::Barman => 'Barman',
+        };
+    }
 }
