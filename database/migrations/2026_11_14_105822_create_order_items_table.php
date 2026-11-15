@@ -1,9 +1,10 @@
 <?php
 
+use App\Enums\StatusProduct;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use App\Enums\StatusProduct;
+
 return new class extends Migration
 {
     /**
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->foreignId('order_id')->constrained()->cascadeOnDelete();
             $table->foreignId('product_id')->constrained()->restrictOnDelete();
             $table->integer('quantity')->default('1');
-            $table->decimal('unit_price', 6,2);
+            $table->decimal('unit_price', 6, 2);
             $table->string('status_product')->default(StatusProduct::Not_Ready->value);
             $table->timestamps();
         });

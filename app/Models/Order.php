@@ -2,23 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Relantions\HasMany;
-use Illuminate\Database\Eloquent\Relantions\BelongsTo;
-use App\Models\User;
-use App\Models\OrderItem;
 use App\Enums\StatusTable;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
-#[Fillable(['waiter_id','status', 'table_number'])]
+#[Fillable(['waiter_id', 'status', 'table_number'])]
 
 class Order extends Model
 {
-
     public function order_items(): HasMany
     {
         return $this->hasMany(OrderItem::class);
     }
+
     public function waiter(): BelongsTo
     {
         return $this->belongsTo(User::class);

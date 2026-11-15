@@ -15,5 +15,5 @@ enum Department: string
             self::Lounge_Bar => 'Lounge Bar',
             self::Bakery => 'Pasticceria',
         };
-    }    
+    }
 }

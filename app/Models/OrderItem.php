@@ -2,14 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Attributes\Fillable;
-use Illuminate\Database\Eloquent\Relantions\BelongsTo;
-use App\Models\Order;
-use App\Models\Product;
 use App\Enums\StatusProduct;
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-#[Fillable(['order_id', 'product_id','quantity', 'unit_price','status_product'])]
+#[Fillable(['order_id', 'product_id', 'quantity', 'unit_price', 'status_product'])]
 
 class OrderItem extends Model
 {
@@ -18,7 +16,7 @@ class OrderItem extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function products(): BelongsTo
+    public function product(): BelongsTo
     {
         return $this->belongsTo(Product::class)->withTrashed();
     }
