@@ -8,5 +8,7 @@ Route::post('/login', [SessionController::class, 'store'])->middleware('guest');
 Route::post('/logout', [SessionController::class, 'destroy'])->name('logout')->middleware('auth');
 
 Route::middleware('auth')->group(function(){
-    //route da proteggere
+    Route::get('/welcome', function(){
+        return view('welcome');
+    });
 });

@@ -21,25 +21,25 @@ class DatabaseSeeder extends Seeder
             'username' => 'karol',
             'first_name' => 'Karol',
             'last_name' => 'Leonardi',
-            'Role' => 'waiter',
+            'role' => 'waiter',
         ]);
         User::factory()->create([
             'username' => 'angelo',
             'first_name' => 'Angelo',
             'last_name' => 'Leonardi',
-            'Role' => 'owner',
+            'role' => 'owner',
         ]);
         User::factory()->create([
             'username' => 'pasquale',
-            'first_name' => 'Karol',
+            'first_name' => 'pasquale',
             'last_name' => 'Leonardi',
-            'Role' => 'barman',
+            'role' => 'barman',
         ]);
         User::factory()->create([
             'username' => 'federica',
-            'first_name' => 'Karol',
+            'first_name' => 'federica',
             'last_name' => 'Leonardi',
-            'Role' => 'cashier',
+            'role' => 'cashier',
         ]);
     }
 }
