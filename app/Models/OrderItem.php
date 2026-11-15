@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Relantions\BelongsTo;
 use App\Models\Order;
 use App\Models\Product;
 use App\Enums\StatusProduct;
@@ -17,15 +18,15 @@ class OrderItem extends Model
         return $this->belongsTo(Order::class);
     }
 
-    public function products(): HasMany
+    public function products(): BelongsTo
     {
-        return $this->hasMany(Product::class)->withTrashed();
+        return $this->belongsTo(Product::class)->withTrashed();
     }
 
     protected function casts(): array
     {
         return [
-            'unit_price' => 'decimal:5',
+            'unit_price' => 'decimal:2',
             'status_product' => StatusProduct::class,
         ];
     }
